@@ -21,3 +21,16 @@ export interface ILayout {
 export interface IPageProps extends RouteComponentProps<{}> {
   route: IRoute;
 }
+
+export interface ICredentials {
+  email: string;
+  password: string;
+}
+
+export interface ILoginCredentials extends ICredentials {
+  remember: boolean;
+}
+
+export interface IErrors {
+  [key: string]: string[];
+}

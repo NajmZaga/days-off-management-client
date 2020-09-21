@@ -7,7 +7,7 @@ interface IDashboardProps {
 export const Dashboard: React.FC<IDashboardProps> = (props) => {
   return (
     <div>
-      
+      home
     </div>
   );
 };

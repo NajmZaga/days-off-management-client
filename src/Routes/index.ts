@@ -1,8 +1,9 @@
 import { AnonymLayout } from "../layouts/AnonymLayout";
-import { Login } from "../pages/Login";
+import { LoginPage } from "../pages/Login";
 import { MainLayout } from "../layouts/MainLayout";
 import { ILayout } from "../utils/types";
-import { generateRoutes } from ".";
+import { generateRoutes } from "./generate-routes";
+import { Dashboard } from "../pages/Dashboard";
 
 export const routes: ILayout[] = [
 	{
@@ -11,15 +12,24 @@ export const routes: ILayout[] = [
 			{
 				title: "Login",
 				name: "login",
-				exact: true,
-				component: Login,
+        exact: true,
+        path: '/login',
+				component: LoginPage,
+				isPublic: true,
 			},
 		],
   },
   {
     layout: MainLayout,
     routes: [
-
+			{
+				title: "Dashboard",
+				name: "dashboard",
+        exact: true,
+        path: '/',
+				component: Dashboard,
+				isPublic: false,
+			},
     ]
   }
 ];

@@ -1,0 +1,33 @@
+@import "./dark-vars.scss";
+
+.ant-layout {
+	&.main-layout {
+		background: $darker-bg;
+	}
+}
+
+.ant-card {
+	.ant-card-head {
+    border-bottom-color: $border-color;
+		.ant-card-head-title {
+			color: $text-color;
+		}
+	}
+	background: $dark-bg;
+	color: $text-color;
+}
+
+.ant-input,
+.ant-input-password {
+  background: $darker-bg;
+  border-color: $border-color;
+  color: $text-color;
+}
+
+.anticon {
+  color: $text-color;
+}
+
+.ant-checkbox-wrapper {
+  color: $text-color;
+}
