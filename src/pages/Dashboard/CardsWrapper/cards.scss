@@ -1,0 +1,12 @@
+.ant-card {
+  &.theme-color {
+    .card-title {
+      color: #fff;
+      font-weight: bold;
+    }
+    .anticon {
+      color: #fff;
+      font-size: 60px;
+    }
+  }
+}

@@ -1,10 +1,38 @@
-body{
-  margin: 0;
+@import './theme/dark-vars.scss';
+
+body {
+	margin: 0;
 }
 
 .ant-layout {
 	&.main-layout {
 		height: 100vh;
+		padding: 0;
+		.content-layout {
+			padding-right: 0;
+			padding-left: 0;
+			.ant-layout-content {
+				margin-top: 20px;
+				.data-layout {
+					padding: 24px;
+				}
+			}
+		}
+	}
+	.ant-layout-sider {
+		.logo-wrapper {
+			margin: auto 20px;
+			padding: 64px 0 20px;
+			border-bottom: 1px solid;
+			img {
+				display: block;
+				max-width: 100%;
+			}
+		}
+		.ant-menu {
+			height: 100%;
+			border: 0;
+		}
 	}
 }
 
@@ -12,14 +40,32 @@ body{
 =              Classes styles                 =
 =============================================*/
 .flex-container {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.theme-color {
+	&.red {
+		background: $red;
+	}
+	&.blue {
+		background: $blue;
+	}
+	&.green {
+		background: $green;
+	}
+	&.orange {
+		background: $orange;
+	}
+	&.violet {
+		background: $violet;
+	}
 }

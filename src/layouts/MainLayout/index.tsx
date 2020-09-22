@@ -9,9 +9,9 @@ interface IMainLayoutProps {}
 export const MainLayout: React.FC<IMainLayoutProps> = ({ children }) => {
 	return (
 		<Layout className="main-layout">
-			<AppHeader />
-			<Layout>
-				<AppSider />
+			<AppSider />
+			<Layout className="content-layout">
+				<AppHeader />
 				<AppContent>{children}</AppContent>
 			</Layout>
 		</Layout>

@@ -5,10 +5,11 @@ import { MainLayout } from "../layouts/MainLayout";
 export interface IRoute {
 	title: string;
 	name: string;
-	component: any;
-	exact: boolean;
+	component?: any;
+	exact?: boolean;
 	path?: string;
 	isPublic?: boolean;
+	hasSiderLink?: boolean;
 	icon?: string;
 	routes?: IRoute[];
 }
@@ -33,4 +34,11 @@ export interface ILoginCredentials extends ICredentials {
 
 export interface IErrors {
   [key: string]: string[];
+}
+
+export interface ICard {
+  title: string;
+	icon: React.ReactNode;
+	themeColor: 'blue' | 'red' | 'green' | 'orange' | 'violet';
+	link: string;
 }

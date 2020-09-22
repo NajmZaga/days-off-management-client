@@ -1,14 +1,37 @@
 @import "./dark-vars.scss";
 
 .ant-layout {
-	&.main-layout {
-		background: $darker-bg;
+	background: $darker-bg;
+	color: $text-color;
+	&.data-layout {
+		background: $dark-bg;
+		border-top: 1px solid $border-color;
+		border-radius: 5px;
+	}
+}
+
+.ant-layout-header {
+	background: $dark-bg;
+	.ant-menu {
+		background: transparent;
+	}
+}
+
+.ant-layout-sider {
+	background: $dark-bg;
+	.ant-menu {
+		background: transparent;
+		color: $text-color;
 	}
 }
 
 .ant-card {
+	&.ant-card-bordered {
+		border: 0;
+		border-top: 1px solid $border-color;
+	}
 	.ant-card-head {
-    border-bottom-color: $border-color;
+		border-bottom-color: $border-color;
 		.ant-card-head-title {
 			color: $text-color;
 		}
@@ -17,17 +40,44 @@
 	color: $text-color;
 }
 
+.ant-picker,
 .ant-input,
 .ant-input-password {
-  background: $darker-bg;
-  border-color: $border-color;
-  color: $text-color;
+	width: 100%;
+	background: $darker-bg;
+	border-color: $border-color;
+	color: $text-color;
+}
+
+.ant-select {
+	width: 100%;
+	.ant-select-selector {
+		background-color: $darker-bg !important;
+		border-color: $border-color !important;
+		color: $text-color;
+	}
 }
 
 .anticon {
-  color: $text-color;
+	color: $text-color;
 }
 
 .ant-checkbox-wrapper {
-  color: $text-color;
+	color: $text-color;
+}
+
+.ant-divider {
+	.ant-divider-inner-text {
+		color: $text-color;
+	}
+	&.title {
+		font-size: 20px;
+	}
+	&.ant-divider-horizontal,
+	&.ant-divider-horizontal {
+		&.ant-divider-with-text::after,
+		&.ant-divider-with-text::before {
+			border-color: $border-color;
+		}
+	}
 }
