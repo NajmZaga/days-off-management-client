@@ -1,10 +1,11 @@
 import { Action } from "redux";
-import { IErrors, ILoginCredentials } from "../../utils/types";
+import { IErrors, ILoginCredentials, IAuthSuccess } from "../../utils/types";
 
 export interface IAuth {
   token: string | null;
   isLoggedIn: boolean;
   isLoading: boolean;
+  rememberMe: boolean;
   errors: IErrors | null;
 }
 
@@ -25,7 +26,7 @@ export interface IAuthMakeLoginAction extends Action<AUTH_MAKE_LOGIN> {
 }
 
 export interface IAuthMakeLoginSuccessAction extends Action<AUTH_MAKE_LOGIN_SUCCESS> {
-  payload: string;
+  payload: IAuthSuccess;
 }
 
 export interface IAuthMakeLoginErrorAction extends Action<AUTH_MAKE_LOGIN_ERROR> {

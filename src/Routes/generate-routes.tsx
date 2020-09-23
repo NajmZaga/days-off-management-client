@@ -21,8 +21,6 @@ export const getFlattenedRoutes = (routes?: IRoute[]): IRoute[] => {
 
 export const generateRoutes = (mainRoutes: ILayout[]) => {
 	const Routes: React.FC<IRoutesProps> = ({ authorized }) => {
-		console.log(authorized);
-
 		const layouts = mainRoutes.map(({ layout: Layout, routes }, index) => {
 			const subRoutes = getFlattenedRoutes(routes);
 

@@ -1,4 +1,4 @@
-import { IErrors, ILoginCredentials } from "../../utils/types";
+import { IErrors, ILoginCredentials, IAuthSuccess } from "../../utils/types";
 import {
 	IAuthMakeLoginAction,
 	IAuthMakeLoginSuccessAction,
@@ -6,21 +6,27 @@ import {
 	AUTH_MAKE_LOGIN,
 	AUTH_MAKE_LOGIN_SUCCESS,
 	AUTH_MAKE_LOGIN_ERROR,
-  IAuthSetLoggedInAction,
-  AUTH_SET_LOGGED_IN,
+	IAuthSetLoggedInAction,
+	AUTH_SET_LOGGED_IN,
+	IAuthLogoutAction,
+	AUTH_LOGOUT,
 } from "./types";
 
 /**
  * Login actions
  */
-export const authLogin = (credentials: ILoginCredentials): IAuthMakeLoginAction => ({
+export const authLogin = (
+	credentials: ILoginCredentials
+): IAuthMakeLoginAction => ({
 	type: AUTH_MAKE_LOGIN,
 	payload: credentials,
 });
 
-export const authLoginSuccess = (token: string): IAuthMakeLoginSuccessAction => ({
+export const authLoginSuccess = (
+	authSuccess: IAuthSuccess
+): IAuthMakeLoginSuccessAction => ({
 	type: AUTH_MAKE_LOGIN_SUCCESS,
-	payload: token,
+	payload: authSuccess,
 });
 
 export const authLoginError = (errors: IErrors): IAuthMakeLoginErrorAction => ({
@@ -31,7 +37,16 @@ export const authLoginError = (errors: IErrors): IAuthMakeLoginErrorAction => ({
 /**
  * Set is loggedIn actions
  */
-export const authSetLoggedIn = (isLoggedIn: boolean): IAuthSetLoggedInAction => ({
-  type: AUTH_SET_LOGGED_IN,
-  payload: isLoggedIn,
+export const authSetLoggedIn = (
+	isLoggedIn: boolean
+): IAuthSetLoggedInAction => ({
+	type: AUTH_SET_LOGGED_IN,
+	payload: isLoggedIn,
+});
+
+/**
+ * Logout actions
+ */
+export const authLogout = (): IAuthLogoutAction => ({
+	type: AUTH_LOGOUT,
 });

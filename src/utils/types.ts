@@ -32,6 +32,11 @@ export interface ILoginCredentials extends ICredentials {
   remember: boolean;
 }
 
+export interface IAuthSuccess {
+	token: string;
+	remember: boolean;
+}
+
 export interface IErrors {
   [key: string]: string[];
 }

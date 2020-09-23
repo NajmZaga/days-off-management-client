@@ -1,43 +1,42 @@
 import React, { useEffect } from "react";
 import { Row, Col } from "antd";
-import './login.scss';
+import "./login.scss";
 import { LoginForm } from "./components/LoginForm";
-import { ILoginCredentials } from "../../utils/types";
+import { ILoginCredentials, IPageProps } from "../../utils/types";
 import { GlobalState } from "../../store";
 
-import { connect, ConnectedProps } from 'react-redux';
+import { connect, ConnectedProps } from "react-redux";
 import { RouteComponentProps } from "react-router-dom";
 
-import { authLogin } from '../../store/auth/actions';
+import { authLogin } from "../../store/auth/actions";
+import { PageTitle } from "../../components/PageTitle";
 
-interface ILoginProps {}
+interface ILoginProps extends IPageProps {}
 
-const Login: React.FC<ILoginProps & RouteComponentProps & ConnectedProps<typeof connector>> = ({
-	isLoggedIn,
-	history,
-	authLogin: authLoginAction,
-}) => {
-
+const Login: React.FC<
+	ILoginProps & RouteComponentProps & ConnectedProps<typeof connector>
+> = ({ route, isLoggedIn, history, authLogin: authLoginAction }) => {
 	useEffect(() => {
 		if (isLoggedIn) {
-			history.push('/');
+			history.push("/");
 		}
 	}, [isLoggedIn, history]);
 
-  const handleLogin = (credentials: ILoginCredentials) => {
-    authLoginAction(credentials);
-  }
+	const handleLogin = (credentials: ILoginCredentials) => {
+		authLoginAction(credentials);
+	};
 
 	return (
-		<div className='login-page flex-container'>
-			<Row justify="center">
-				<Col>
-					<LoginForm
-            onLogin={ handleLogin }
-          />
-				</Col>
-			</Row>
-		</div>
+		<>
+			<PageTitle title={route.title} />
+			<div className='login-page flex-container'>
+				<Row justify='center'>
+					<Col>
+						<LoginForm onLogin={handleLogin} />
+					</Col>
+				</Row>
+			</div>
+		</>
 	);
 };
 

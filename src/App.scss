@@ -19,6 +19,7 @@ body {
 			}
 		}
 	}
+
 	.ant-layout-sider {
 		.logo-wrapper {
 			margin: auto 20px;
@@ -33,6 +34,10 @@ body {
 			height: 100%;
 			border: 0;
 		}
+	}
+
+	.ant-layout-header {
+		padding: 0 24px;
 	}
 }
 

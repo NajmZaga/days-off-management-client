@@ -12,7 +12,10 @@ function* makeLogin({payload: credentials}: IAuthMakeLoginAction) {
       email: credentials.email,
       password: credentials.password,
     });
-    yield put(authLoginSuccess(res.data.token));
+    yield put(authLoginSuccess({
+      token: res.data.token,
+      remember: credentials.remember,
+    }));
   } catch (error) {
     console.error(error);
   }
